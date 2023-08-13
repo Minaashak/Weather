@@ -1,0 +1,42 @@
+body{
+    background-color: #1e202c;
+}
+
+/* !----Navbar-Start--- */
+nav  .navbar-nav li{
+    padding-left: 16px;
+    padding-right: 16px;
+    transition: all .5s;
+    
+}
+nav  .navbar-nav li:hover{
+    border: 1px solid aqua;
+    border-radius: 26px;
+}
+nav  .navbar-nav li a:hover{
+        color: aqua;
+}
+/* !----Navbar-End--- */
+
+/* !---Home--Start--- */
+#home{
+    background-image: linear-gradient(to right ,rgba(0, 0, 0, 0.277),rgba(0, 0, 0, 0.277)) ,  url(../img/banner.png);
+    background-position: center center;
+    background-size: cover;
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+}
+#home .container .row .card{
+    background-color: rgba(255, 255, 255, 0.69);
+    height: 350px;
+}
+
+#home .container .row .card .icons p{
+    font-size: 19px;
+    font-weight: bold;
+}
+#home  .form .about-form{
+    margin-top: 60px;
+}
+/* !---Home--End--- */
