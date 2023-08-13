@@ -36,10 +36,10 @@ function showData() {
         <p class="text-primary">${response.current.condition.text}</p>
     </div>
     <div class="icons d-flex ">
-        <p class="me-4"><i class="fa-solid fa-umbrella p-2"></i> ${
+        <p class="me-1"><i class="fa-solid fa-umbrella p-2"></i> ${
           response.current.wind_degree
         } %</p>
-        <p class="me-3"><i class="fa-solid fa-wind p-2"></i> ${
+        <p class="me-1"><i class="fa-solid fa-wind p-2"></i> ${
           response.current.wind_kph
         } km/h</p>
         <p><i class="fa-solid fa-compass p-2"></i> ${response.current.wind_dir} </p>
