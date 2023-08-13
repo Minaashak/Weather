@@ -4,7 +4,7 @@ let response = [];
 // !---API
 async function getApi(location="cairo") {
   let https = await fetch(
-    `http://api.weatherapi.com/v1/forecast.json?key=e55cbaffa4e5469ea68174134231308&q=${location}&days=3`
+    `https://api.weatherapi.com/v1/forecast.json?key=e55cbaffa4e5469ea68174134231308&q=${location}&days=3`
   );
   response = await https.json();
   showData();
