@@ -30,30 +30,32 @@ function showData() {
     </div>
     <div class="card-body text-center">
         <h4 class="card-title">${response.location.name}</h4>
-        <h1 class="card-text">28<sup>o</sup>C <img class="" src="https:${
-          response.current.condition.icon
-        }" alt="about-weather"></h1>
+        <h1 class="card-text">${
+          response.current.temp_c
+        }<sup>o</sup>C <img class="" src="https:${
+    response.current.condition.icon
+  }" alt="about-weather"></h1>
         <p class="text-primary">${response.current.condition.text}</p>
     </div>
     <div class="icons d-flex ">
-        <p class="me-1"><i class="fa-solid fa-umbrella p-2"></i> ${
-          response.current.wind_degree
-        } %</p>
-        <p class="me-1"><i class="fa-solid fa-wind p-2"></i> ${
+        <p class="me-4"><i class="fa-solid fa-umbrella p-2"></i> ${
           response.current.wind_kph
+        } %</p>
+        <p class="me-3"><i class="fa-solid fa-wind p-2"></i> ${
+          response.current.wind_mph
         } km/h</p>
-        <p><i class="fa-solid fa-compass p-2"></i> ${response.current.wind_dir} </p>
+        <p><i class="fa-solid fa-compass p-2"></i> ${
+          response.current.wind_dir
+        } </p>
     </div>
     `;
   document.getElementById("card").innerHTML = col;
 }
-
 // Next Day
 
 function nextWeatherDay() {
   let firstDay = ``;
-  for (let i = 0; i < 1; i++) {
-    let nextDay = new Date(response.forecast.forecastday[i + 1].date);
+    let nextDay = new Date(response.forecast.forecastday[1].date);
     firstDay += `
     <div class="head ">
         <p class="lead"> ${nextDay.toLocaleDateString("en-us", {
@@ -62,28 +64,27 @@ function nextWeatherDay() {
     </div>
     <div class>
         <img src="https:${
-          response.forecast.forecastday[i + 1].day.condition.icon
+          response.forecast.forecastday[1].day.condition.icon
         }" alt="about-weather">
         <h3>${
-          response.forecast.forecastday[i + 1].day.maxtemp_c
+          response.forecast.forecastday[1].day.maxtemp_c
         } <sup>o</sup>C</h3>
         <p>${
-          response.forecast.forecastday[i + 1].day.mintemp_c
+          response.forecast.forecastday[1].day.mintemp_c
         }<sup>o</sup>C</p>
         <p class="text-primary">${
-          response.forecast.forecastday[i + 1].day.condition.text
+          response.forecast.forecastday[1].day.condition.text
         }</p>
     </div>
     `;
-  }
+  
   document.getElementById("nextDay").innerHTML = firstDay;
 }
 
 // After Next Day
 function afterWeatherDay() {
   let thirdDay = ``;
-  for (let i = 0; i < 1; i++) {
-    let thirdDate = new Date(response.forecast.forecastday[i + 2].date);
+    let thirdDate = new Date(response.forecast.forecastday[2].date);
     thirdDay += `
     <div class="head ">
         <p class="lead">${thirdDate.toLocaleDateString("en-us", {
@@ -92,20 +93,19 @@ function afterWeatherDay() {
     </div>
     <div class>
         <img src="https:${
-          response.forecast.forecastday[i + 2].day.condition.icon
+          response.forecast.forecastday[2].day.condition.icon
         }" alt="about-weather">
         <h3>${
-          response.forecast.forecastday[i + 2].day.maxtemp_c
+          response.forecast.forecastday[2].day.maxtemp_c
         }<sup>o</sup>C</h3>
         <p>${
-          response.forecast.forecastday[i + 2].day.mintemp_c
+          response.forecast.forecastday[2].day.mintemp_c
         }<sup>o</sup>C</p>
         <p class="text-primary">${
-          response.forecast.forecastday[i + 2].day.condition.text
+          response.forecast.forecastday[2].day.condition.text
         }</p>
     </div>
     `;
-  }
   document.getElementById("afterNextDay").innerHTML = thirdDay;
 }
 
